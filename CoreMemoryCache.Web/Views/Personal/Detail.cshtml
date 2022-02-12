@@ -1,0 +1,31 @@
+﻿@model Personal
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Personel</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Adı</td>
+            <td>Soyadı</td>
+            <td>Email</td>
+            <td>Cinsiyet</td>
+            <td>Ip Adresi</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+                <td>@Model.Id</td>
+                <td>@Model.FirstName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Email</td>
+                <td>@Model.Gender</td>
+                <td>@Model.Gender</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

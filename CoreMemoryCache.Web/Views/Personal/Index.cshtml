@@ -1,0 +1,37 @@
+﻿@model List<Personal>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Personeller</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Adı</td>
+                <td>Soyadı</td>
+                <td>Email</td>
+                <td>Cinsiyet</td>
+                <td>Ip Adresi</td>
+                <td>Detay</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var personal in Model)
+            {
+                <tr>
+                    <td>@personal.Id</td>
+                    <td>@personal.FirstName</td>
+                    <td>@personal.LastName</td>
+                    <td>@personal.Email</td>
+                    <td>@personal.Gender</td>
+                    <td>@personal.Gender</td>
+                    <td><a href="/personal/detail/@personal.Id">Detay</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
