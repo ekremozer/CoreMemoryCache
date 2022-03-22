@@ -47,18 +47,18 @@ namespace CoreMemoryCache.Web.Controllers
             var personal = FakeDataGenerator.GetPersonals().FirstOrDefault(x => x.Id == 1);
 
             //Set metodu
-            _cacheManager.Set(cacheKey1, new Personal());
+            //_cacheManager.Set(cacheKey1, new Personal());
 
-            //Asenkron set metodu
-            await _cacheManager.SetAsync(cacheKey1, personal);
+            ////Asenkron set metodu
+            //await _cacheManager.SetAsync(cacheKey1, personal);
 
-            //Get Metodu
-            var get = _cacheManager.Get<Personal>(cacheKey1.Key);
-            //Asenkron get metodu
-            var getAsync = _cacheManager.GetAsync<Personal>(cacheKey1.Key);
+            ////Get Metodu
+            //var get = _cacheManager.Get<Personal>(cacheKey1.Key);
+            ////Asenkron get metodu
+            //var getAsync = _cacheManager.GetAsync<Personal>(cacheKey1.Key);
 
             //GetOrCreate metodu
-            var getOrCreate = _cacheManager.GetOrCreate<Personal>(cacheKey1, () => FakeDataGenerator.GetPersonals().FirstOrDefault(x => x.Id == 1));
+            //var getOrCreate = _cacheManager.GetOrCreate<Personal>(cacheKey1, () => FakeDataGenerator.GetPersonals().FirstOrDefault(x => x.Id == 1));
 
             //Asenkron GetOrCreate metodu
             var getOrCreateAsync = await _cacheManager.GetOrCreateAsync<Personal>(cacheKey1, () => FakeDataGenerator.GetPersonals().FirstOrDefault(x => x.Id == 1));

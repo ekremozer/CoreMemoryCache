@@ -10,22 +10,22 @@ namespace CoreMemoryCache.Web.Core.Caching
     {
         private readonly IMemoryCache _memoryCache;
         public MemoryCacheManager(IMemoryCache memoryCache)
-        {
+        { 
             _memoryCache = memoryCache;
         }
 
         public T Get<T>(string key)
         {
-            var readFromCache = _memoryCache.TryGetValue(key, out T model);
-            return readFromCache ? model : default;
+            _memoryCache.TryGetValue(key, out T model);
+            return model;
         }
 
         public async Task<T> GetAsync<T>(string key)
         {
             return await Task.Run(() =>
             {
-                var readFromCache = _memoryCache.TryGetValue(key, out T model);
-                return readFromCache ? model : default;
+                _memoryCache.TryGetValue(key, out T model);
+                return model;
             });
         }
         public void Set(CacheKey cacheKey, object model)
